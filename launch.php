@@ -20,5 +20,5 @@ $log = new Log(__DIR__ . "/logs/test.txt");
 
 $serv = new Server("udp", "192.168.0.37", 5000, $bdd, $log); //  Constructeur de serveur prend 3 parametres : le protocol, l'ip et enfin le port
 
-$serv->runServer(); // Ecoute attentive en TCP sur le port 5000 sur la machine locale
-$serv->closeSocket(); // Ferme la socket TCP localhost:5000
+$serv->runServer(); // Ecoute en UDP sur le port 5000 sur la machine locale
+$serv->closeSocket(); // Ferme la socket UDP localhost:5000
