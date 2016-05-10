@@ -111,7 +111,7 @@ class Server
 
                         }
                         $balises = $this->bdd->sql_getBalises($datas[1], $token);
-                        $this->log->write("Datas : " . $datas[0] . '--' . $datas[1] . '--' . $datas[2] . '\nToken : ' . $token);
+                        $this->log->write("Datas : " . $datas[0] . '--' . $datas[1] . '\nToken : ' . $token);
 
                         $sent = $token . $this->seps;
                         if(!empty($balises)) {

@@ -36,7 +36,7 @@ class BDD
     }
 
     public function sql_getToken($datas){
-        $sql = "Select u.token as token, u.idUser as idUser FROM User u, Societe s WHERE u.Societe_idSociete=s.idSociete and u.nom='" . $datas[0] . "' and s.nom='" . $datas[1] . "' and u.mdp='" . $datas[2] . "' group by u.idUser";
+        $sql = "Select u.token as token, u.idUser as idUser FROM User u, Societe s WHERE u.Societe_idSociete=s.idSociete and u.email='" . $datas[0] . "' and u.mdp='" . $datas[1] . "' group by u.idUser";
         $q = $this->execute($sql);
         $d = $q->fetchAll();
         if ( !empty($d[0]) ) {
@@ -46,8 +46,8 @@ class BDD
             return null;
     }
 
-    public function sql_getBalises($noms, $token){
-        $sql = "Select nomBalise as nom FROM Balise b, User u, Societe s WHERE u.Societe_idSociete=s.idSociete and b.Societe_idSociete=s.idSociete and s.nom='" . $noms ."' and u.token='" . $token . "' group by b.idBalise";
+    public function sql_getBalises($mdp, $token){
+        $sql = "Select nomBalise as nom FROM Balise b, User u, Societe s WHERE u.Societe_idSociete=s.idSociete and b.Societe_idSociete=s.idSociete and u.mdp='" . $mdp ."' and u.token='" . $token . "' group by b.idBalise";
         $q = $this->execute($sql);
         $d = $q->fetchAll();
         if ( !empty($d) ) {
