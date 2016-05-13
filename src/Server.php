@@ -99,7 +99,7 @@ class Server
 
                 switch($type){
                     case 1:
-                        // Inscription
+                        // Connexion
                         $datas = explode($this->sepc,trim($payload),4);
                         $d = $this->bdd->sql_getToken($datas); // On recupere le token de l'utilisateur
                         $token = $d['token'];

@@ -1,2 +1,5 @@
 [database]
 db_password = MDPAMODIFIER
+db_login = root
+db_name = sigfox
+sgbd = mysql

@@ -13,7 +13,10 @@ class BDD
         try {
 	    $ini = parse_ini_file(__DIR__ . '/../config/app.ini');
 	    $pass = $ini['db_password'];
-            $pdo = new PDO('mysql:host=localhost;dbname=sigfox;charset=utf8', 'root', $pass);
+	    $user = $ini['db_user'];
+	    $dbName = $ini['db_name'];
+        $SGBD = $ini['sgbd'];
+            $pdo = new PDO($SGBD . ':host=localhost;dbname=' . $dbName . ';charset=utf8', $user, $pass);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
             $pdo->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, "SET NAMES utf8");
