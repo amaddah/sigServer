@@ -188,7 +188,7 @@ class Server
                                 socket_sendto($sock, DATA_ERROR, strlen(DATA_ERROR) , 0 , $remote_ip , $remote_port);
                                 break;
                             }
-                            $str = $this->getNameOfPrivilege($droit) . $this->sepc;
+                            $str = $this->getNameOfPrivilege($droit) . $this->seps;
                             $i = 0;
                             foreach ($d as $one) {
                                 $str .= $one['RSSI'];
